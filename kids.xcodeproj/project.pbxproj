@@ -22,6 +22,10 @@
 		EA74BB871889A8DF00FDA8AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA74BB6B1889A8DF00FDA8AF /* CoreData.framework */; };
 		EA74BB8F1889A8DF00FDA8AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA74BB8D1889A8DF00FDA8AF /* InfoPlist.strings */; };
 		EA74BB911889A8DF00FDA8AF /* kidsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74BB901889A8DF00FDA8AF /* kidsTests.m */; };
+		EA74BB9B1889A94A00FDA8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA74BB9A1889A94A00FDA8AF /* Main.storyboard */; };
+		EA74BBA61889B1CF00FDA8AF /* kdkKidsAreCoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74BBA51889B1CF00FDA8AF /* kdkKidsAreCoolViewController.m */; };
+		EA74BBA91889B53300FDA8AF /* kdkKid.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74BBA81889B53300FDA8AF /* kdkKid.m */; };
+		EA74BBAE1889C18F00FDA8AF /* kdkKidAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA74BBAD1889C18F00FDA8AF /* kdkKidAddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		EA74BB8C1889A8DF00FDA8AF /* kidsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "kidsTests-Info.plist"; sourceTree = "<group>"; };
 		EA74BB8E1889A8DF00FDA8AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA74BB901889A8DF00FDA8AF /* kidsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kidsTests.m; sourceTree = "<group>"; };
+		EA74BB9A1889A94A00FDA8AF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EA74BBA41889B1CF00FDA8AF /* kdkKidsAreCoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kdkKidsAreCoolViewController.h; sourceTree = "<group>"; };
+		EA74BBA51889B1CF00FDA8AF /* kdkKidsAreCoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kdkKidsAreCoolViewController.m; sourceTree = "<group>"; };
+		EA74BBA71889B53300FDA8AF /* kdkKid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kdkKid.h; sourceTree = "<group>"; };
+		EA74BBA81889B53300FDA8AF /* kdkKid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kdkKid.m; sourceTree = "<group>"; };
+		EA74BBAC1889C18F00FDA8AF /* kdkKidAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = kdkKidAddViewController.h; path = ../kdkKidAddViewController.h; sourceTree = "<group>"; };
+		EA74BBAD1889C18F00FDA8AF /* kdkKidAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = kdkKidAddViewController.m; path = ../kdkKidAddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +126,13 @@
 		EA74BB6D1889A8DF00FDA8AF /* kids */ = {
 			isa = PBXGroup;
 			children = (
+				EA74BB9A1889A94A00FDA8AF /* Main.storyboard */,
+				EA74BBAC1889C18F00FDA8AF /* kdkKidAddViewController.h */,
+				EA74BBAD1889C18F00FDA8AF /* kdkKidAddViewController.m */,
+				EA74BBA71889B53300FDA8AF /* kdkKid.h */,
+				EA74BBA81889B53300FDA8AF /* kdkKid.m */,
+				EA74BBA41889B1CF00FDA8AF /* kdkKidsAreCoolViewController.h */,
+				EA74BBA51889B1CF00FDA8AF /* kdkKidsAreCoolViewController.m */,
 				EA74BB761889A8DF00FDA8AF /* kdkAppDelegate.h */,
 				EA74BB771889A8DF00FDA8AF /* kdkAppDelegate.m */,
 				EA74BB7C1889A8DF00FDA8AF /* Images.xcassets */,
@@ -229,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA74BB9B1889A94A00FDA8AF /* Main.storyboard in Resources */,
 				EA74BB721889A8DF00FDA8AF /* InfoPlist.strings in Resources */,
 				EA74BB7D1889A8DF00FDA8AF /* Images.xcassets in Resources */,
 			);
@@ -249,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA74BBAE1889C18F00FDA8AF /* kdkKidAddViewController.m in Sources */,
 				EA74BB7B1889A8DF00FDA8AF /* kids.xcdatamodeld in Sources */,
+				EA74BBA61889B1CF00FDA8AF /* kdkKidsAreCoolViewController.m in Sources */,
+				EA74BBA91889B53300FDA8AF /* kdkKid.m in Sources */,
 				EA74BB741889A8DF00FDA8AF /* main.m in Sources */,
 				EA74BB781889A8DF00FDA8AF /* kdkAppDelegate.m in Sources */,
 			);
@@ -452,6 +474,7 @@
 				EA74BB961889A8DF00FDA8AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA74BB971889A8DF00FDA8AF /* Build configuration list for PBXNativeTarget "kidsTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +483,7 @@
 				EA74BB991889A8DF00FDA8AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
