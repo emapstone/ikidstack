@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "kdkKid.h"
+
 @interface kdkKidAddViewController : UIViewController
+
+@property kdkKid *kid;
 
 @end

@@ -24,7 +24,7 @@
 
 
 - (void)loadData {
-    //I want to load in the data from core data
+    //I want to load in the data from core data eventually, but I want this to work first.
     kdkKid *kid1 = [[kdkKid alloc] init];
     kid1.kidName = @"Julie";
     kid1.kidFavoriteColor = @"Blue";
@@ -52,15 +52,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.kidsList = [[NSMutableArray alloc] init];
+    [self loadData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.kidsList = [[NSMutableArray alloc] init];
-    [self loadData];
 
 
 }
@@ -76,7 +75,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -87,11 +86,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ListPrototypeCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-
+    kdkKid *kid = [self.kidsList objectAtIndex:indexPath.row];
+    cell.textLabel.text = kid.kidFavoriteColor;
+    // if you add other fields, it overwrites them, so figure out another way to add multiple fields to table row
     return cell;
 }
 
