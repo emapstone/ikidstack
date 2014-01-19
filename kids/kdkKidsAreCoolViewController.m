@@ -17,27 +17,51 @@
 
 @implementation kdkKidsAreCoolViewController
 
+- (NSManagedObjectContext *)managedObjectContext
+{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Fetch the devices from persistent data store
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Kids"];
+    self.kidsList = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    //[self.tableView reloadData];
+}
+
+
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
     
 }
 
 
-- (void)loadData {
+//- (void)loadData {
     //I want to load in the data from core data eventually, but I want this to work first.
-    kdkKid *kid1 = [[kdkKid alloc] init];
-    kid1.kidName = @"Julie";
-    kid1.kidFavoriteColor = @"Blue";
-    kid1.kidFavoriteToy = @"Clue";
-    [self.kidsList addObject:kid1];
+  //  kdkKid *kid1 = [[kdkKid alloc] init];
+    //kid1.kidName = @"Julie";
+    //kid1.kidFavoriteColor = @"Blue";
+    //kid1.kidFavoriteToy = @"Clue";
+    //[self.kidsList addObject:kid1];
     
-    kdkKid *kid2 = [[kdkKid alloc] init];
-    kid2.kidName = @"James";
-    kid2.kidFavoriteColor = @"Red";
-    kid2.kidFavoriteToy = @"Mario";
-    [self.kidsList addObject:kid2];
+    //kdkKid *kid2 = [[kdkKid alloc] init];
+    //kid2.kidName = @"James";
+    //kid2.kidFavoriteColor = @"Red";
+    //kid2.kidFavoriteToy = @"Mario";
+    //[self.kidsList addObject:kid2];
     
-}
+//}
     
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -52,8 +76,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.kidsList = [[NSMutableArray alloc] init];
-    [self loadData];
+   // self.kidsList = [[NSMutableArray alloc] init];
+    //[self loadData];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -90,8 +114,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    kdkKid *kid = [self.kidsList objectAtIndex:indexPath.row];
-    cell.textLabel.text = kid.kidFavoriteColor;
+    NSManagedObject *kid = [self.kidsList objectAtIndex:indexPath.row];
+    //[cell.textLabel setText:[NSString stringWithFormat:@"%@ %@", [kid valueForKey:@"name"], [kid valueForKey:@"favorite_color"]]];
+    [cell.detailTextLabel setText:[kid valueForKey:@"favorite_toy"]];
+    
+    //kdkKid *kid = [self.kidsList objectAtIndex:indexPath.row];
+    //cell.textLabel.text = kid.kidFavoriteColor;
     // if you add other fields, it overwrites them, so figure out another way to add multiple fields to table row
     return cell;
 }

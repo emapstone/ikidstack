@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface kdkAddKidViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *fav_color;
-@property (weak, nonatomic) IBOutlet UITextField *fav_toy;
-
+@property (weak, nonatomic) IBOutlet UITextField *kidName;
+@property (weak, nonatomic) IBOutlet UITextField *kidFavoriteColor;
+@property (weak, nonatomic) IBOutlet UITextField *kidFavoriteToy;
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end

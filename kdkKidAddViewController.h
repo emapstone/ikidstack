@@ -12,6 +12,10 @@
 
 @interface kdkKidAddViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *kidName;
+@property (weak, nonatomic) IBOutlet UITextField *kidFavoriteColor;
+@property (weak, nonatomic) IBOutlet UITextField *kidFavoriteToy;
+
 @property kdkKid *kid;
 
 @end
